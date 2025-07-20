@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import streamlit as st
 
 # 既存のimportの後に追加
 if st.sidebar.button("環境変数の確認"):
@@ -12,7 +13,7 @@ if st.sidebar.button("環境変数の確認"):
     else:
         st.sidebar.error("APIキーが設定されていません")
 
-import streamlit as st
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
