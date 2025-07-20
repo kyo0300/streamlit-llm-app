@@ -1,5 +1,16 @@
+import os
 from dotenv import load_dotenv
 load_dotenv()
+
+# 既存のimportの後に追加
+if st.sidebar.button("環境変数の確認"):
+    api_key = os.getenv("OPENAI_API_KEY")
+    if api_key:
+        st.sidebar.success("APIキーが設定されています")
+        # セキュリティのため、最初の数文字のみ表示
+        st.sidebar.write(f"APIキー: {api_key[:8]}...")
+    else:
+        st.sidebar.error("APIキーが設定されていません")
 
 import streamlit as st
 from langchain_openai import ChatOpenAI
