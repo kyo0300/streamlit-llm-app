@@ -3,7 +3,7 @@ load_dotenv()
 
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 # LLMを使った簡単なWebアプリ
 # ユーザーの入力に応じて専門家の回答を生成する
